@@ -1,11 +1,15 @@
+import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 
 import { client } from '../lib/client';
+import Navbar from '../components/Navbar';
 
 export default function Home({ products, bannerData }) {
   return (
-    <div>{products[0].name}</div>
+    <>
+      <Navbar />
+    </>
   )
 }
 
