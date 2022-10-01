@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 
 import styles from '../styles/navbar.module.css';
 import Link from 'next/link';
@@ -26,10 +25,10 @@ export default function Navbar() {
                 <div className={styles.rightNavOuter}>
                     <div className={`${styles.rightNav}`}>
                         <div className={styles.cartIcon}>
-                            <Image src='/assets/cart-icon.svg' width='28px' height='28px' />
+                            <img src='/assets/cart-icon.svg' width='28px' height='28px' alt="Cart" />
                             <p>2</p>
                         </div>
-                        <Image src='/assets/profile-icon.svg' width='28px' height='28px' />
+                        <img src='/assets/profile-icon.svg' width='28px' height='28px' alt="Profile" />
                     </div>
                     <button
                         className={`${styles.menu} ${isNavOpen ? styles.crossAnimation : null}`}

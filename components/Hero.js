@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 import styles from '../styles/hero.module.css';
 import Link from 'next/link';
@@ -10,9 +9,7 @@ export default function Hero({ bannerData }) {
         <div className={styles.heroMain}>
             <div className='container'>
                 <div className={styles.heroInner}>
-                    <div className={styles.heroImage}>
-                        <Image src={urlFor(bannerData.image)} objectFit='contain' layout='fill' alt={`${bannerData.productName} Image`} />
-                    </div>
+                    <img src={urlFor(bannerData.image)} alt={`${bannerData.productName} Image`} className={styles.heroImage} />
                     <div className={styles.text}>
                         <p className={styles.subHeading}>{bannerData.productName}</p>
                         <p className={styles.heading}>{bannerData.bigTitle}</p>
