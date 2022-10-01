@@ -85,4 +85,25 @@
     }
 }
 
-@media (min-width: 1050px) {}
+@media (min-width: 1050px) {
+    .heading {
+        font-size: 2.7rem;
+    }
+
+    .subHeading {
+        font-size: 1.5rem;
+    }
+
+    .buyHeading {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 1.2rem
+    }
+
+    .heroImage {
+        width: 550px;
+        height: 400px;
+    }
+}

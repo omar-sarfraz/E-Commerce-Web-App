@@ -10,7 +10,7 @@ export default function Home({ products, bannerData }) {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Hero bannerData={bannerData.length && bannerData[0]} />
     </>
   )
 }

@@ -13,12 +13,12 @@ export default {
         },
         {
             name: 'buttonText',
-            title: 'ButtonText',
+            title: 'Button Text',
             type: 'string',
         },
         {
-            name: 'product',
-            title: 'Product',
+            name: 'bigTitle',
+            title: 'Big Title',
             type: 'string',
         },
         {
@@ -27,34 +27,14 @@ export default {
             type: 'string',
         },
         {
-            name: 'smallText',
-            title: 'SmallText',
+            name: 'productName',
+            title: 'Product Name',
             type: 'string',
         },
         {
-            name: 'midText',
-            title: 'MidText',
+            name: 'priceTitle',
+            title: 'Price Title',
             type: 'string',
-        },
-        {
-            name: 'largeText1',
-            title: 'LargeText1',
-            type: 'string',
-        },
-        {
-            name: 'largeText2',
-            title: 'LargeText2',
-            type: 'string',
-        },
-        {
-            name: 'discount',
-            title: 'Discount',
-            type: 'string',
-        },
-        {
-            name: 'saleTime',
-            title: 'SaleTime',
-            type: 'string',
-        },
+        }
     ],
 };
