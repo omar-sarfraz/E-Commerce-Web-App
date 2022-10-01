@@ -56,6 +56,22 @@ export default {
                         return 'The category can only be headphones, earphones, speakers, mobiles and iphones.'
                 }
             })
+        }, {
+            name: 'company',
+            title: "Company",
+            type: "string",
+            validation: Rule => Rule.required().custom(company => {
+                switch (company) {
+                    case 'apple':
+                        return true
+                    case 'samsung':
+                        return true
+                    case 'xiaomi':
+                        return true
+                    default:
+                        return 'The company can only be apple, samsung and xiaomi.'
+                }
+            })
         }
     ]
 }

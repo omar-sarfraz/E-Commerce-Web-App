@@ -1,16 +1,17 @@
 import React from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 
 import { client } from '../lib/client';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Category from '../components/Category';
 
 export default function Home({ products, bannerData }) {
   return (
     <>
       <Navbar />
       <Hero bannerData={bannerData.length && bannerData[0]} />
+      <Category />
     </>
   )
 }

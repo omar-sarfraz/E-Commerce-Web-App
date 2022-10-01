@@ -14,7 +14,7 @@ export default function Navbar() {
     return (
         <div className={styles.main}>
             <div className={styles.navbar}>
-                <h2 className={styles.websiteTitle}>ECommerce</h2>
+                <Link href='#'><h2 className={styles.websiteTitle}>ECommerce</h2></Link>
                 <nav>
                     <ul className={`${styles.ul} ${isNavOpen ? null : styles.displayNone}`}>
                         <li><Link href='#'>Apple</Link></li>
@@ -25,10 +25,14 @@ export default function Navbar() {
                 <div className={styles.rightNavOuter}>
                     <div className={`${styles.rightNav}`}>
                         <div className={styles.cartIcon}>
-                            <img src='/assets/cart-icon.svg' width='28px' height='28px' alt="Cart" />
+                            <Link href='#'>
+                                <img src='/assets/cart-icon.svg' width='28px' height='28px' alt="Cart" />
+                            </Link>
                             <p>2</p>
                         </div>
-                        <img src='/assets/profile-icon.svg' width='28px' height='28px' alt="Profile" />
+                        <Link href='#'>
+                            <img src='/assets/profile-icon.svg' width='28px' height='28px' alt="Profile" />
+                        </Link>
                     </div>
                     <button
                         className={`${styles.menu} ${isNavOpen ? styles.crossAnimation : null}`}
