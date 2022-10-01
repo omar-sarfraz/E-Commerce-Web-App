@@ -1,8 +1,13 @@
+.websiteTitle {
+    font-size: 2rem;
+    font-family: 'Iceland', 'Inter', Helvetica;
+}
+
 .navbar {
     padding: 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .navbar>h2 {
@@ -17,10 +22,16 @@
     font-size: 1.5rem;
     padding: 0;
     margin: 0;
+    z-index: 11;
 }
 
 .ul>li {
     list-style: none;
+}
+
+.ul>li>a {
+    width: 100%;
+    height: 100%;
 }
 
 .rightNav {
@@ -34,6 +45,9 @@
     position: relative;
     height: 20px;
     width: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .menu::before {
@@ -43,7 +57,9 @@
     background-color: rgba(19, 18, 18, 0.795);
     position: absolute;
     top: 0;
+    left: 0;
     border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .menu::after {
@@ -52,17 +68,122 @@
     width: 30px;
     background-color: rgba(19, 18, 18, 0.795);
     position: absolute;
+    left: 0;
     bottom: 0;
     border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
 }
 
-.mobileNav {
+.menu {
+    display: none;
+    z-index: 11;
+}
+
+.rightNavOuter {
     display: flex;
-    list-style: none;
-    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cartIcon {
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.mobileNav>li {
-    font-size: 2rem;
+.cartIcon>p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem;
+    position: absolute;
+    margin: 0;
+    right: 0;
+    bottom: -5px;
+    background-color: red;
+    border-radius: 2rem;
+    color: white;
+    width: 18px;
+    height: 18px;
+    font-size: 0.8rem;
+    font-weight: medium;
+}
+
+.displayNone {
+    transform: translateY(-300px);
+    transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        position: relative;
+    }
+
+    .navbar .ul {
+        width: 100%;
+        height: unset;
+        position: absolute;
+        left: 0;
+        bottom: -150px;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        background-color: #0093E9;
+        align-items: center;
+        z-index: 10;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .ul>li {
+        text-align: center;
+        color: white;
+        font-weight: medium;
+        font-size: 1.4rem;
+        padding: 0.4rem;
+        width: 100%;
+    }
+
+    .ul>li:hover {
+        background-color: white;
+        color: #0093E9;
+    }
+
+    .navbar h2 {
+        font-size: 1.8rem;
+        z-index: 11;
+    }
+
+    .rightNav {
+        gap: 0.4rem;
+        z-index: 11;
+    }
+
+    .displayNone {
+        transform: translateY(-300px);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu::before,
+    .menu::after {
+        height: 3px;
+    }
+
+    .crossAnimation::before {
+        rotate: 45deg;
+        top: 45%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .crossAnimation::after {
+        rotate: 135deg;
+        bottom: 40%;
+        transition: all 0.5s ease-in-out;
+    }
+
 }

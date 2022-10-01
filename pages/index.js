@@ -4,11 +4,13 @@ import Image from 'next/image'
 
 import { client } from '../lib/client';
 import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
 
 export default function Home({ products, bannerData }) {
   return (
     <>
       <Navbar />
+      <Hero />
     </>
   )
 }
