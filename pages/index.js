@@ -5,6 +5,7 @@ import { client } from '../lib/client';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Category from '../components/Category';
+import Products from '../components/Products';
 
 export default function Home({ products, bannerData }) {
   return (
@@ -12,6 +13,7 @@ export default function Home({ products, bannerData }) {
       <Navbar />
       <Hero bannerData={bannerData.length && bannerData[0]} />
       <Category />
+      <Products products={products} />
     </>
   )
 }

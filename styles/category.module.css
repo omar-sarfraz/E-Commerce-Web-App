@@ -1,0 +1,12 @@
+.links {
+    width: 100%;
+    display: flex;
+}
+
+.categories {
+    font-size: 1.2rem;
+    color: white;
+    padding: 0.4rem 1.2rem;
+    background-color: rgba(0, 147, 233, 1);
+    border-right: 0.5px solid white;
+}

@@ -1,0 +1,25 @@
+.image {
+    width: 100%;
+    height: 170px;
+    margin-bottom: 0.4rem;
+    border-radius: 0.4rem;
+}
+
+.productContainer {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    padding: 0.4rem;
+}
+
+.productContainer p {
+    margin: 0;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
