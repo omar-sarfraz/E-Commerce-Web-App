@@ -7,9 +7,12 @@ export default function Navbar() {
     const [isNavOpen, setIsNavOpen] = useState(false)
 
     useEffect(() => {
-        if (window.innerWidth > 768)
-            setIsNavOpen(true)
+        if (window.innerWidth > 768) setIsNavOpen(true);
+        window.addEventListener('resize', () => {
+            window.innerWidth > 768 ? setIsNavOpen(true) : setIsNavOpen(false)
+        })
     }, []);
+
 
     return (
         <div className={styles.main}>
