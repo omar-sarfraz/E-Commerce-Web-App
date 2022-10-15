@@ -8,6 +8,7 @@
 .image {
     width: 80%;
     height: 90%;
+    object-fit: contain;
     margin-bottom: 0.4rem;
     border-radius: 0.4rem;
 }

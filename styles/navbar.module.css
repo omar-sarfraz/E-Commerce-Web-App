@@ -1,6 +1,7 @@
 .websiteTitle {
     font-size: 2.5rem;
     font-family: 'Iceland', 'Inter', Helvetica;
+    cursor: pointer;
 }
 
 .navbar {
@@ -90,6 +91,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .cartIcon>p {
@@ -108,6 +110,10 @@
     height: 18px;
     font-size: 0.8rem;
     font-weight: medium;
+}
+
+.profile {
+    cursor: pointer;
 }
 
 .displayNone {

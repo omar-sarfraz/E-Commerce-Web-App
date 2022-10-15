@@ -8,7 +8,6 @@ import Category from '../components/Category';
 import Products from '../components/Products';
 
 export default function Home({ appleProducts, samsungProducts, xiaomiProducts, bannerData }) {
-  console.log(appleProducts)
   return (
     <>
       <Navbar />

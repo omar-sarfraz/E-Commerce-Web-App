@@ -17,10 +17,10 @@ export default function Navbar() {
     return (
         <div className={styles.main}>
             <div className={styles.navbar}>
-                <Link href='#'><h2 className={styles.websiteTitle}>ECommerce</h2></Link>
+                <Link href='/'><h2 className={styles.websiteTitle}>ECommerce</h2></Link>
                 <nav>
                     <ul className={`${styles.ul} ${isNavOpen ? null : styles.displayNone}`}>
-                        <li><Link href='#'>Apple</Link></li>
+                        <li><Link href='/apple'>Apple</Link></li>
                         <li><Link href='#'>Samsung</Link></li>
                         <li><Link href='#'>Xiaomi</Link></li>
                     </ul>
@@ -34,7 +34,7 @@ export default function Navbar() {
                             <p>2</p>
                         </div>
                         <Link href='#'>
-                            <img src='/assets/profile-icon.svg' width='28px' height='28px' alt="Profile" />
+                            <img className={styles.profile} src='/assets/profile-icon.svg' width='28px' height='28px' alt="Profile" />
                         </Link>
                     </div>
                     <button
