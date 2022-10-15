@@ -5,13 +5,21 @@ import Link from 'next/link';
 
 import SingleProduct from './SingleProduct';
 
-export default function Products({ products }) {
+export default function Products({ appleProducts, samsungProducts, xiaomiProducts }) {
     return (
         <section>
             <div className='container'>
-                <h1 className='title'>Products</h1>
+                <h1 className='title'>Apple Products</h1>
                 <div className={styles.productsContainer}>
-                    {products.map(item => <SingleProduct product={item} />)}
+                    {appleProducts.map(item => <SingleProduct product={item} />)}
+                </div>
+                <h1 className='title'>Samsung Products</h1>
+                <div className={styles.productsContainer}>
+                    {samsungProducts.map(item => <SingleProduct product={item} />)}
+                </div>
+                <h1 className='title'>Xiaomi Products</h1>
+                <div className={styles.productsContainer}>
+                    {xiaomiProducts.map(item => <SingleProduct product={item} />)}
                 </div>
             </div>
         </section>
