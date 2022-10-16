@@ -21,8 +21,8 @@ export default function Navbar() {
                 <nav>
                     <ul className={`${styles.ul} ${isNavOpen ? null : styles.displayNone}`}>
                         <li><Link href='/apple'>Apple</Link></li>
-                        <li><Link href='#'>Samsung</Link></li>
-                        <li><Link href='#'>Xiaomi</Link></li>
+                        <li><Link href='/samsung'>Samsung</Link></li>
+                        <li><Link href='/xiaomi'>Xiaomi</Link></li>
                     </ul>
                 </nav>
                 <div className={styles.rightNavOuter}>
