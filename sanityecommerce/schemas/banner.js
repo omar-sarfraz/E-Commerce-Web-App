@@ -4,12 +4,25 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'image',
-            title: 'Image',
-            type: 'image',
+            name: "image",
+            title: "Image",
+            type: "array",
+            of: [{ type: "image" }],
             options: {
-                hotspot: true,
-            },
+                hotspot: true
+            }
+        }, {
+            name: 'slug',
+            title: "Slug",
+            type: "slug",
+            options: {
+                source: 'productName',
+                maxLength: 90
+            }
+        }, {
+            name: 'productName',
+            title: 'Product Name',
+            type: 'string',
         },
         {
             name: 'buttonText',
@@ -24,11 +37,6 @@ export default {
         {
             name: 'description',
             title: 'Description',
-            type: 'string',
-        },
-        {
-            name: 'productName',
-            title: 'Product Name',
             type: 'string',
         },
         {

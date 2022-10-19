@@ -20,9 +20,9 @@ export default function Navbar() {
                 <Link href='/'><h2 className={styles.websiteTitle}>ECommerce</h2></Link>
                 <nav>
                     <ul className={`${styles.ul} ${isNavOpen ? null : styles.displayNone}`}>
-                        <li><Link href='/apple'>Apple</Link></li>
-                        <li><Link href='/samsung'>Samsung</Link></li>
-                        <li><Link href='/xiaomi'>Xiaomi</Link></li>
+                        <li><Link href='/pages/apple'>Apple</Link></li>
+                        <li><Link href='/pages/samsung'>Samsung</Link></li>
+                        <li><Link href='/pages/xiaomi'>Xiaomi</Link></li>
                     </ul>
                 </nav>
                 <div className={styles.rightNavOuter}>

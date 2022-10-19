@@ -1,0 +1,60 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 3rem 0;
+}
+
+.pictureSection {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contentSection {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainImageContainer {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 3rem;
+    border: 1px solid lightgray;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.mainImage {
+    height: 100%;
+    object-fit: contain;
+}
+
+.imagesContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.smallImage {
+    height: 100%;
+    object-fit: contain;
+}
+
+.imageContainer {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    margin-right: 1rem;
+    border: 1px solid lightgray;
+    border-radius: .4rem;
+    padding: 5px;
+}
+
+.imageContainer:hover {
+    cursor: pointer;
+    filter: brightness(200%);
+}
