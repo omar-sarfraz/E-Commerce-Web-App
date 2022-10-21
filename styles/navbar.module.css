@@ -94,7 +94,13 @@
     cursor: pointer;
 }
 
-.cartIcon>p {
+.cartIcon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.cartIcon button>p {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react';
 
 import styles from '../styles/navbar.module.css';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+
+import Cart from './Cart'
 
 export default function Navbar() {
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const [isCartOpen, setIsCartOpen] = useState(true);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const cart = useSelector((state) => state.cart.value)
 
     useEffect(() => {
         if (window.innerWidth > 768) setIsNavOpen(true);
@@ -29,10 +33,10 @@ export default function Navbar() {
                 <div className={styles.rightNavOuter}>
                     <div className={`${styles.rightNav}`}>
                         <div className={styles.cartIcon}>
-                            <Link href='#'>
+                            <button onClick={() => setIsCartOpen(prev => !prev)}>
                                 <img src='/assets/cart-icon.svg' width='28px' height='28px' alt="Cart" />
-                            </Link>
-                            <p>2</p>
+                                <p>{cart.totalProducts}</p>
+                            </button>
                         </div>
                         <Link href='#'>
                             <img className={styles.profile} src='/assets/profile-icon.svg' width='28px' height='28px' alt="Profile" />
@@ -44,6 +48,7 @@ export default function Navbar() {
                     ></button>
                 </div>
             </div>
+            {isCartOpen ? <Cart products={cart.products} /> : null}
         </div>
     );
 }

@@ -124,6 +124,11 @@
     gap: 2rem;
 }
 
+.buttons button {
+    background-color: transparent;
+    border: none
+}
+
 .buttons a {
     font-size: 1.4rem;
     font-weight: 500;

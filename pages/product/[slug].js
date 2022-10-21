@@ -1,13 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import { client, urlFor } from '../../lib/client'
 import SingleProduct from '../../components/SingleProduct'
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from '../../styles/productPage.module.css'
+import { addProduct } from '../../redux/slices/cartSlice';
 
 export default function ProductDetails({ product, products }) {
     const [imageIndex, setImageIndex] = useState(0);
+    const [productToAdd, setProductToAdd] = useState({ ...product, quantity: 1 });
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        setProductToAdd({ ...product, quantity: 1 })
+    }, [product])
+
+    const increaseQuantity = () => {
+        setProductToAdd(prev => ({
+            ...prev,
+            quantity: prev.quantity + 1
+        }))
+    }
+
+    const decreaseQuantity = () => {
+        setProductToAdd(prev => ({
+            ...prev,
+            quantity: prev.quantity - 1
+        }))
+    }
+
+    const addProductToCart = () => {
+        dispatch(addProduct(productToAdd))
+    }
 
     return (
         <div className={styles.productPageMain}>
@@ -32,14 +59,14 @@ export default function ProductDetails({ product, products }) {
                         <h4 className={styles.desc}>{product.details || product.description}</h4>
                         <h2 className={styles.price}>Price: {product.price}$</h2>
                         <div className={styles.quantity}>
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
+                            <button onClick={decreaseQuantity}>-</button>
+                            <span>{productToAdd.quantity}</span>
+                            <button onClick={increaseQuantity}>+</button>
                         </div>
                         <div className={styles.buttons}>
-                            <Link href="#">
+                            <button onClick={addProductToCart}>
                                 <a className={styles.cartButton}>Add to Cart</a>
-                            </Link>
+                            </button>
                             <Link href="#">
                                 <a className={styles.buyButton}>Buy Now</a>
                             </Link>
