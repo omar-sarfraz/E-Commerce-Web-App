@@ -48,7 +48,7 @@ export default function Navbar() {
                     ></button>
                 </div>
             </div>
-            {isCartOpen ? <Cart products={cart.products} /> : null}
+            {isCartOpen ? <Cart setIsCartOpen={setIsCartOpen} /> : null}
         </div>
     );
 }

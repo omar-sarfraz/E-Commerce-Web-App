@@ -9,14 +9,58 @@
     height: 100vh;
     background-color: white;
     z-index: 20;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: medium;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.functions {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.productCross {
+    color: red;
+    border: 1px solid red;
+    background-color: transparent;
+    border-radius: 5px;
 }
 
 .items {
+    height: 10%;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.2rem;
+}
+
+.productsContainer {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 1rem;
 }
 
 .products {
     display: flex;
+    gap: 0.3rem;
+    border: 1px solid lightgray;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    position: relative;
 }
 
 .productImageContainer {
@@ -53,4 +97,33 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0.2rem;
+}
+
+.bottom {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.totalPrice {
+    width: 100%;
+    border-bottom: 1px solid #0093E9;
+    color: #0093E9;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.4rem;
+}
+
+.checkout {
+    width: 100%;
+    border: 1px solid #0093E9;
+    background-color: #0093E9;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.6rem;
 }

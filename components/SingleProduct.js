@@ -17,7 +17,7 @@ export default function SingleProduct({ product }) {
                 <p className={styles.description}>{product.details.slice(0, 40)}...</p>
             </div>
             <Link href={`/product/${product.slug.current}`}>
-                <a className={styles.button}>Buy Now</a>
+                <a className={styles.button}>View More</a>
             </Link>
         </div>
     );
