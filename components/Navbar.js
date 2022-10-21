@@ -4,7 +4,8 @@ import styles from '../styles/navbar.module.css';
 import Link from 'next/link';
 
 export default function Navbar() {
-    const [isNavOpen, setIsNavOpen] = useState(false)
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(true);
 
     useEffect(() => {
         if (window.innerWidth > 768) setIsNavOpen(true);

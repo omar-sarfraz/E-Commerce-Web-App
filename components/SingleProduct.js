@@ -14,7 +14,7 @@ export default function SingleProduct({ product }) {
             </div>
             <div className={styles.text}>
                 <p className={styles.name}>{product.name}</p>
-                <p className={styles.description}>{product.details}</p>
+                <p className={styles.description}>{product.details.slice(0, 40)}...</p>
             </div>
             <Link href={`/product/${product.slug.current}`}>
                 <a className={styles.button}>Buy Now</a>

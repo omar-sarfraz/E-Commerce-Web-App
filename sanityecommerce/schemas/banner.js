@@ -40,9 +40,9 @@ export default {
             type: 'string',
         },
         {
-            name: 'priceTitle',
-            title: 'Price Title',
-            type: 'string',
+            name: 'price',
+            title: 'Price',
+            type: 'number',
         }
     ],
 };

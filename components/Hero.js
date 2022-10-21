@@ -10,12 +10,14 @@ export default function Hero({ bannerData }) {
         <div className={styles.heroMain}>
             <div className='container'>
                 <div className={styles.heroInner}>
-                    <img src={urlFor(bannerData.image[0])} alt={`${bannerData.productName} Image`} className={styles.heroImage} />
+                    <div className={styles.heroImage}>
+                        <img src={urlFor(bannerData.image[0])} alt={`${bannerData.productName} Image`} className={styles.heroImageInner} />
+                    </div>
                     <div className={styles.text}>
                         <p className={styles.subHeading}>{bannerData.productName}</p>
                         <p className={styles.heading}>{bannerData.bigTitle}</p>
                         <p className={styles.description}>{bannerData.description}</p>
-                        <p className={styles.buyHeading}>{bannerData.priceTitle}</p>
+                        <p className={styles.buyHeading}>Now availible at {bannerData.price}$</p>
                         <div className={styles.linkWrapper}><Link href={`/product/${bannerData.slug.current}`}><a className={styles.buyButton}>{bannerData.buttonText}</a></Link></div>
                     </div>
                 </div>
