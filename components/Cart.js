@@ -4,13 +4,15 @@ import styles from '../styles/cart.module.css';
 import Link from 'next/link';
 import { urlFor } from '../lib/client';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { increaseQty, decreaseQty, removeProduct } from '../redux/slices/cartSlice';
 
 export default function Cart({ setIsCartOpen }) {
     const cart = useSelector((state) => state.cart.value)
+    const dispatch = useDispatch()
 
     return (
-        <div className={styles.cartMain} onBlur={() => setIsCartOpen(false)}>
+        <div className={styles.cartMain}>
             <div className={styles.items}>
                 <p>Total Items: {cart.totalProducts}</p>
                 <button onClick={() => setIsCartOpen(prev => !prev)} className={styles.cross}>X</button>
@@ -27,9 +29,14 @@ export default function Cart({ setIsCartOpen }) {
                                 <h6 className={styles.desc}>{product.details ? product.details.slice(0, 30) : product.description.slice(0, 30)}... </h6>
                                 <h5 className={styles.price}>Price: {product.price}$</h5>
                                 <h5 className={styles.quantity}>Quantity: {product.quantity}</h5>
+                                <div className={styles.quantity}>
+                                    <button onClick={() => dispatch(decreaseQty(product))}>-</button>
+                                    <span>{product.quantity}</span>
+                                    <button onClick={() => dispatch(increaseQty(product))}>+</button>
+                                </div>
                             </div>
                             <div className={styles.functions}>
-                                <button className={styles.productCross}>X</button>
+                                <button className={styles.productCross} onClick={() => dispatch(removeProduct(product))}>X</button>
                             </div>
                         </div>
                     );

@@ -127,3 +127,20 @@
     text-align: center;
     padding: 0.6rem;
 }
+
+.quantity {
+    margin: 0.2rem 0;
+}
+
+.quantity button,
+.quantity span {
+    font-size: 0.92rem;
+    border: 1px solid lightgray;
+    padding: 0.2rem 0.6rem;
+}
+
+.quantity button {
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}

@@ -27,12 +27,43 @@ export const cartSlice = createSlice({
                 state.value.totalPrice += action.payload.quantity * action.payload.price
                 state.value.totalProducts += 1
             }
+        },
+        increaseQty: (state, action) => {
+            state.value.products.forEach((item, index) => {
+                if (item._id === action.payload._id) {
+                    state.value.products[index].quantity += 1
+                    state.value.totalPrice += action.payload.price
+                    return
+                }
+            })
+        },
+        decreaseQty: (state, action) => {
+            state.value.products.forEach((item, index) => {
+                if (item._id === action.payload._id) {
+                    if (state.value.products[index].quantity === 1) return
+                    state.value.products[index].quantity -= 1
+                    state.value.totalPrice -= action.payload.price
+                    return
+                }
+            })
+        },
+        removeProduct: (state, action) => {
+            let itemToRemove
+            state.value.products.forEach((item, index) => {
+                if (item._id === action.payload._id) {
+                    itemToRemove = index;
+                }
+            })
+            let priceToDecrease = state.value.products[itemToRemove].quantity * state.value.products[itemToRemove].price
+            state.value.totalProducts -= 1
+            state.value.totalPrice -= priceToDecrease
+            state.value.products.splice(itemToRemove, 1)
         }
     },
 })
 
 const { actions, reducer } = cartSlice
 
-export const { addProduct } = actions
+export const { addProduct, increaseQty, decreaseQty, removeProduct } = actions
 
 export default reducer
