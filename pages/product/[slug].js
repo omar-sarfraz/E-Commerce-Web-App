@@ -5,6 +5,7 @@ import { client, urlFor } from '../../lib/client'
 import SingleProduct from '../../components/SingleProduct'
 import { useSelector, useDispatch } from 'react-redux';
 
+import toast from 'react-hot-toast';
 import styles from '../../styles/productPage.module.css'
 import { addProduct } from '../../redux/slices/cartSlice';
 
@@ -34,6 +35,7 @@ export default function ProductDetails({ product, products }) {
 
     const addProductToCart = () => {
         dispatch(addProduct(productToAdd))
+        toast(`${productToAdd.quantity} ${productToAdd.name || productToAdd.productName} added to cart ☑️`)
     }
 
     return (
