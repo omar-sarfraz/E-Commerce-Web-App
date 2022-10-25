@@ -12,9 +12,11 @@ import {
   removeProduct,
 } from "../redux/slices/cartSlice";
 
+import { setCartOpen } from "../redux/slices/cartOpen";
+
 import getStripe from "../lib/getStripe";
 
-export default function Cart({ setIsCartOpen }) {
+export default function Cart() {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
 
@@ -66,7 +68,7 @@ export default function Cart({ setIsCartOpen }) {
           <div className={styles.items}>
             <p>Total Items: {cart.totalProducts}</p>
             <button
-              onClick={() => setIsCartOpen((prev) => !prev)}
+              onClick={() => dispatch(setCartOpen(false))}
               className={styles.cross}
             >
               X

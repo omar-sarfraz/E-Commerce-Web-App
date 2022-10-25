@@ -1,195 +1,204 @@
 .main {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin: 3rem 0;
-    gap: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 3rem 0;
+  gap: 2rem;
 }
 
 .productPageMain {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
 .pictureSection {
-    width: 40%;
-    display: flex;
-    justify-content: center;
+  width: 40%;
+  display: flex;
+  justify-content: center;
 }
 
 .contentSection {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
-    font-size: 2.5rem;
-    margin: 0.4rem 0 1rem 0;
+  font-size: 2.5rem;
+  margin: 0.4rem 0 1rem 0;
 }
 
 .desc {
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin: 0 0 2rem 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 2rem 0;
 }
 
 .price {
-    margin: 0;
+  margin: 0;
 }
 
 .mainImageContainer {
-    width: 400px;
-    height: 400px;
-    margin-bottom: 3rem;
-    border: 1px solid lightgray;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
+  width: 400px;
+  height: 400px;
+  margin-bottom: 3rem;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .mainImage {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .imagesContainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .smallImage {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .imageContainer {
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    margin-right: 1rem;
-    border: 1px solid lightgray;
-    border-radius: .4rem;
-    padding: 5px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  margin-right: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 0.4rem;
+  padding: 5px;
 }
 
 .imageContainer:hover {
-    cursor: pointer;
-    filter: brightness(200%);
+  cursor: pointer;
+  filter: brightness(200%);
 }
 
 .productsContainer {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    gap: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 2rem;
 }
 
 .recommendation {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .quantity {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 .quantity button,
 .quantity span {
-    font-size: 1.2rem;
-    border: 1px solid lightgray;
-    padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  border: 1px solid lightgray;
+  padding: 0.6rem 1rem;
 }
 
 .quantity button {
-    font-size: 1.3rem;
-    font-weight: 500;
-    cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .buttons {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .buttons button {
-    background-color: transparent;
-    border: none
+  border: none;
+  border: 1px solid rgba(0, 147, 233, 1);
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  filter: brightness(120%);
 }
 
 .buttons a {
-    font-size: 1.4rem;
-    font-weight: 500;
-    padding: 0.6rem 1.4rem;
-    border: 1px solid rgba(0, 147, 233, 1);
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .cartButton {
-    color: rgba(0, 147, 233, 1);
+  color: rgba(0, 147, 233, 1);
+  background-color: white;
 }
 
 .buyButton {
-    background-color: rgba(0, 147, 233, 1);
-    color: white;
+  background-color: rgba(0, 147, 233, 1);
+  color: white;
 }
 
 @media (max-width: 590px) {
-    .main {
-        flex-direction: column;
-        align-items: center;
-    }
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .pictureSection {
-        width: 100%;
-    }
+  .pictureSection {
+    width: 100%;
+  }
 
-    .contentSection {
-        width: 100%;
-    }
+  .contentSection {
+    width: 100%;
+  }
 
-    .mainImageContainer {
-        width: 300px;
-        height: 300px;
-    }
+  .mainImageContainer {
+    width: 300px;
+    height: 300px;
+  }
 
-    .imageContainer {
-        width: 50px;
-        height: 50px;
-    }
+  .imageContainer {
+    width: 50px;
+    height: 50px;
+  }
 
-    .buttons {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
+  .buttons {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-    .buttons a {
-        width: 100%;
-        text-align: center;
-    }
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 900px) {
-    .main {
-        flex-direction: column;
-    }
+  .main {
+    flex-direction: column;
+  }
 
-    .pictureSection {
-        width: 100%;
-    }
+  .pictureSection {
+    width: 100%;
+  }
 
-    .contentSection {
-        width: 100%;
-    }
+  .contentSection {
+    width: 100%;
+  }
 }

@@ -1,0 +1,24 @@
+.footerOuter {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.footer {
+  padding: 2rem;
+  background-color: #0093e9;
+  width: 100%;
+  color: white;
+  gap: 0.5rem;
+}
+
+.footer p {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer p span {
+  font-weight: bold;
+}

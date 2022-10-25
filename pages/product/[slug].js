@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import styles from "../../styles/productPage.module.css";
 import { addProduct } from "../../redux/slices/cartSlice";
+import { setCartOpen } from "../../redux/slices/cartOpen";
 
 export default function ProductDetails({ product, products }) {
   const [imageIndex, setImageIndex] = useState(0);
@@ -40,6 +41,16 @@ export default function ProductDetails({ product, products }) {
         productToAdd.name || productToAdd.productName
       } added to cart ☑️`
     );
+  };
+
+  const buyNow = () => {
+    dispatch(addProduct(productToAdd));
+    toast(
+      `${productToAdd.quantity} ${
+        productToAdd.name || productToAdd.productName
+      } added to cart ☑️`
+    );
+    dispatch(setCartOpen(true));
   };
 
   return (
@@ -83,12 +94,12 @@ export default function ProductDetails({ product, products }) {
               <button onClick={increaseQuantity}>+</button>
             </div>
             <div className={styles.buttons}>
-              <button onClick={addProductToCart}>
-                <a className={styles.cartButton}>Add to Cart</a>
+              <button onClick={addProductToCart} className={styles.cartButton}>
+                <a>Add to Cart</a>
               </button>
-              <Link href="#">
-                <a className={styles.buyButton}>Buy Now</a>
-              </Link>
+              <button onClick={buyNow} className={styles.buyButton}>
+                <a>Buy Now</a>
+              </button>
             </div>
           </div>
         </div>
