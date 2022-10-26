@@ -50,7 +50,7 @@ export default function Cart() {
       {!cart.products.length ? (
         <div className={styles.empty}>
           <button
-            onClick={() => setIsCartOpen((prev) => !prev)}
+            onClick={() => dispatch(setCartOpen(false))}
             className={styles.emptyCross}
           >
             X
@@ -58,7 +58,7 @@ export default function Cart() {
           <h2>Cart is empty</h2>
           <button
             className={styles.continueShopping}
-            onClick={() => setIsCartOpen(false)}
+            onClick={() => dispatch(setCartOpen(false))}
           >
             Continue Shopping
           </button>

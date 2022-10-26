@@ -6,9 +6,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCartOpen } from "../redux/slices/cartOpen";
 
 import Cart from "./Cart";
+import Profile from "./Profile";
 
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const isCartOpen = useSelector((state) => state.cartOpen.value);
   const cart = useSelector((state) => state.cart.value);
 
@@ -23,6 +25,10 @@ export default function Navbar() {
 
   const handleCartClick = () => {
     isCartOpen ? dispatch(setCartOpen(false)) : dispatch(setCartOpen(true));
+  };
+
+  const openProfile = () => {
+    setIsProfileOpen((prev) => !prev);
   };
 
   return (
@@ -47,7 +53,7 @@ export default function Navbar() {
           </ul>
         </nav>
         <div className={styles.rightNavOuter}>
-          <div className={`${styles.rightNav}`}>
+          <div className={styles.rightNav}>
             <div className={styles.cartIcon}>
               <button onClick={handleCartClick}>
                 <img
@@ -59,15 +65,14 @@ export default function Navbar() {
                 <p>{cart.totalProducts}</p>
               </button>
             </div>
-            <Link href="#">
+            <button className={styles.profileButton} onClick={openProfile}>
               <img
-                className={styles.profile}
                 src="/assets/profile-icon.svg"
-                width="28px"
-                height="28px"
+                width="30px"
+                height="30px"
                 alt="Profile"
               />
-            </Link>
+            </button>
           </div>
           <button
             className={`${styles.menu} ${
@@ -78,6 +83,7 @@ export default function Navbar() {
         </div>
       </div>
       {isCartOpen ? <Cart /> : null}
+      {isProfileOpen ? <Profile setIsProfileOpen={setIsProfileOpen} /> : null}
     </div>
   );
 }

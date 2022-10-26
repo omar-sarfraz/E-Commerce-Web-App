@@ -177,3 +177,10 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 590px) {
+  .cartMain {
+    width: 300px;
+    padding: 0.2rem;
+  }
+}
