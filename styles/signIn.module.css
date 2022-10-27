@@ -1,0 +1,45 @@
+.signIn {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(24, 23, 23, 0.795);
+  z-index: 20;
+}
+
+.signInInner {
+  width: 300px;
+  height: 230px;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.info {
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: gray;
+}
+
+.button {
+  background-color: #0093e9;
+  border: none;
+  padding: 0.6rem 1rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}

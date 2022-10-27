@@ -8,6 +8,7 @@ import mobileReducer from "./slices/mobilesSlice";
 import headphoneReducer from "./slices/headphonesSlice";
 import earphoneReducer from "./slices/earphonesSlice";
 import cartOpen from "./slices/cartOpen";
+import userReducer from "./slices/userSlice";
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +21,6 @@ export const store = configureStore({
     headphone: headphoneReducer,
     earphone: earphoneReducer,
     cartOpen: cartOpen,
+    user: userReducer,
   },
 });

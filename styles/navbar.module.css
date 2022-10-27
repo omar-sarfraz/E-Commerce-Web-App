@@ -1,3 +1,7 @@
+.main {
+  position: relative;
+}
+
 .websiteTitle {
   font-size: 2.5rem;
   font-family: "Iceland", "Inter", Helvetica;
