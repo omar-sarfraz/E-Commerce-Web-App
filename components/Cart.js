@@ -16,8 +16,9 @@ import { setCartOpen } from "../redux/slices/cartOpen";
 
 import getStripe from "../lib/getStripe";
 
-export default function Cart() {
+export default function Cart({ setIsProfileOpen }) {
   const cart = useSelector((state) => state.cart.value);
+  const user = useSelector((state) => state.user.value);
   const dispatch = useDispatch();
 
   const removeProductLocal = (product) => {
@@ -26,6 +27,13 @@ export default function Cart() {
   };
 
   const handleCheckout = async () => {
+    if (!user.address) {
+      setIsProfileOpen(true);
+      dispatch(setCartOpen(false));
+      toast("Please enter your shipping address!");
+      return;
+    }
+
     const stripe = await getStripe();
 
     const response = await fetch("/api/stripe", {

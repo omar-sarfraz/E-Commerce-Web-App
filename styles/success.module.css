@@ -25,6 +25,10 @@
   color: white;
 }
 
+.success p span {
+  text-decoration: underline;
+}
+
 .button {
   font-size: 1.2rem;
   font-weight: bold;

@@ -40,10 +40,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.2rem;
+  padding: 0.4rem 0.6rem;
   font-weight: 500;
   color: white;
   font-size: 1.05rem;
+  cursor: pointer;
 }
 
 .form {

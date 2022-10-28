@@ -14,6 +14,7 @@ import { putBannerProducts } from "../redux/slices/bannerProductSlice";
 import { putMobileProducts } from "../redux/slices/mobilesSlice";
 import { putHeadphoneProducts } from "../redux/slices/headphonesSlice";
 import { putEarphoneProducts } from "../redux/slices/earphonesSlice";
+import { setUser } from "../redux/slices/userSlice";
 
 export default function Home({
   appleProductsFetched,
@@ -38,6 +39,11 @@ export default function Home({
     dispatch(putMobileProducts(mobiles));
     dispatch(putHeadphoneProducts(headphones));
     dispatch(putEarphoneProducts(earphones));
+    let user = localStorage.getItem("user");
+    if (user) {
+      user = JSON.parse(user);
+      dispatch(setUser(user));
+    }
   }, []);
 
   return (

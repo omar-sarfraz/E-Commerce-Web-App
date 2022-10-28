@@ -7,16 +7,12 @@ import { setCartOpen } from "../redux/slices/cartOpen";
 
 import Cart from "./Cart";
 import Profile from "./Profile";
-import SignInPage from "./SignInPage";
-import { setUser } from "../redux/slices/userSlice";
 
-export default function Navbar() {
+export default function Navbar({ setIsSignInOpen }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const isCartOpen = useSelector((state) => state.cartOpen.value);
   const cart = useSelector((state) => state.cart.value);
-  const user = useSelector((state) => state.user.value);
-  const [isSignInOpen, setIsSignInOpen] = useState(user.email ? true : false);
 
   const dispatch = useDispatch();
 
@@ -25,11 +21,6 @@ export default function Navbar() {
     window.addEventListener("resize", () => {
       window.innerWidth > 768 ? setIsNavOpen(true) : setIsNavOpen(false);
     });
-    let user = localStorage.getItem("user");
-    user = JSON.parse(user);
-    if (user) {
-      dispatch(setUser(user));
-    }
   }, []);
 
   const handleCartClick = () => {
@@ -91,14 +82,13 @@ export default function Navbar() {
           ></button>
         </div>
       </div>
-      {isCartOpen ? <Cart /> : null}
+      {isCartOpen ? <Cart setIsProfileOpen={setIsProfileOpen} /> : null}
       {isProfileOpen ? (
         <Profile
           setIsProfileOpen={setIsProfileOpen}
           setIsSignInOpen={setIsSignInOpen}
         />
       ) : null}
-      {isSignInOpen ? <SignInPage setIsSignInOpen={setIsSignInOpen} /> : null}
     </div>
   );
 }
