@@ -180,7 +180,10 @@
 
 @media (max-width: 590px) {
   .cartMain {
-    width: 300px;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
     padding: 0.2rem;
   }
 }
