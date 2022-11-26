@@ -152,7 +152,8 @@ export default function SignIn({ setIsSignInOpen, setSignIn }) {
           <GoogleButton onClick={handleSignIn} />
         </div>
         <p className={[styles.footer, styles.info].join(" ")}>
-          Don't have an account? <button onClick={handleChange}>Sign Up</button>
+          Don&apos;t have an account?{" "}
+          <button onClick={handleChange}>Sign Up</button>
         </p>
       </div>
     </div>
