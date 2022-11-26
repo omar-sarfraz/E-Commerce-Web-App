@@ -1,24 +1,33 @@
 .productsContainer {
-    width: 100%;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-evenly;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly;
 }
 
 .titleContainer {
-    border-bottom: 1px solid black;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .title {
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    font-weight: 500;
-    letter-spacing: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.4rem;
+}
+
+.noProducts {
+  display: flex;
+  flex: 1;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
