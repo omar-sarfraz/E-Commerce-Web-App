@@ -31,6 +31,10 @@ export default function Navbar({ setIsSignInOpen }) {
     setIsProfileOpen((prev) => !prev);
   };
 
+  const handleSearchClick = () => {
+    console.log("Search");
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.navbar}>
@@ -54,6 +58,18 @@ export default function Navbar({ setIsSignInOpen }) {
         </nav>
         <div className={styles.rightNavOuter}>
           <div className={styles.rightNav}>
+            <div className={styles.searchIcon}>
+              <Link href="/pages/search">
+                <a>
+                  <img
+                    src="/assets/search.svg"
+                    width="35px"
+                    height="35px"
+                    alt="Search"
+                  />
+                </a>
+              </Link>
+            </div>
             <div className={styles.cartIcon}>
               <button onClick={handleCartClick}>
                 <img

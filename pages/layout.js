@@ -7,14 +7,14 @@ import Loading from "../components/Loading";
 import { useSelector, useDispatch } from "react-redux";
 
 import SignInPage from "../components/SignInPage";
+import SignUpPage from "../components/SignUpPage";
 import { setUser } from "../redux/slices/userSlice";
 
 function Layout({ children }) {
   const [loading, setLoading] = useState(true);
+  const [signIn, setSignIn] = useState(true);
   const user = useSelector((state) => state.user.value);
-  const [isSignInOpen, setIsSignInOpen] = useState(
-    !user.address ? true : false
-  );
+  const [isSignInOpen, setIsSignInOpen] = useState(!user.email ? true : false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Layout({ children }) {
     if (user) {
       user = JSON.parse(user);
       if (user) dispatch(setUser(user));
-      if (user.address) setIsSignInOpen(false);
+      if (user.email) setIsSignInOpen(false);
     }
     setLoading(false);
   }, []);
@@ -34,7 +34,17 @@ function Layout({ children }) {
       ) : (
         <>
           {isSignInOpen ? (
-            <SignInPage setIsSignInOpen={setIsSignInOpen} />
+            signIn ? (
+              <SignInPage
+                setIsSignInOpen={setIsSignInOpen}
+                setSignIn={setSignIn}
+              />
+            ) : (
+              <SignUpPage
+                setIsSignInOpen={setIsSignInOpen}
+                setSignIn={setSignIn}
+              />
+            )
           ) : (
             <>
               <Navbar setIsSignInOpen={setIsSignInOpen} />

@@ -90,6 +90,10 @@
   gap: 1rem;
 }
 
+.searchIcon {
+  cursor: pointer;
+}
+
 .cartIcon {
   position: relative;
   display: flex;

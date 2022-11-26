@@ -1,4 +1,4 @@
-.signIn {
+.signUp {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -11,9 +11,8 @@
   z-index: 20;
 }
 
-.signInInner {
+.signUpInner {
   width: 300px;
-  height: 370px;
   background-color: white;
   border-radius: 0.5rem;
   display: flex;
@@ -49,31 +48,31 @@
   color: red;
 }
 
-.signInEmail {
+.signUpEmail {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
 }
 
-.signInEmail div {
+.signUpEmail div {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.signInEmail label {
+.signUpEmail label {
   margin-bottom: 0.4rem;
 }
 
-.signInEmail input {
+.signUpEmail input {
   padding: 0.4rem;
   border-radius: 0.2rem;
   border: 1px solid lightgrey;
   margin-bottom: 0.7rem;
 }
 
-.signInEmail button {
+.signUpEmail button {
   width: 100%;
   border: none;
   background-color: #0093e9;
@@ -87,8 +86,13 @@
   justify-content: center;
 }
 
-.signInEmail button:hover {
+.signUpEmail button:hover {
   filter: brightness(110%);
+}
+
+.signUpEmail button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
 }
 
 .footer {

@@ -1,0 +1,36 @@
+.productsContainer {
+}
+
+.input {
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+  display: flex;
+  border: 1px solid lightgray;
+}
+
+.input input {
+  width: 100%;
+  border: none;
+  font-size: 1.3rem;
+  color: gray;
+  outline: none;
+}
+
+.noProducts {
+  display: flex;
+  flex: 1;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.searchIcon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

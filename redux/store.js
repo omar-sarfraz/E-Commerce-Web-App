@@ -9,6 +9,7 @@ import headphoneReducer from "./slices/headphonesSlice";
 import earphoneReducer from "./slices/earphonesSlice";
 import cartOpen from "./slices/cartOpen";
 import userReducer from "./slices/userSlice";
+import productsReducer from "./slices/productsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -22,5 +23,6 @@ export const store = configureStore({
     earphone: earphoneReducer,
     cartOpen: cartOpen,
     user: userReducer,
+    products: productsReducer,
   },
 });
