@@ -8,6 +8,7 @@ import { urlFor } from "../lib/client";
 export default function SingleProduct({ product }) {
   return (
     <div className={styles.productContainer}>
+      <p className={styles.price}>{product.price} $</p>
       <div className={styles.imageContainer}>
         <img
           className={styles.image}

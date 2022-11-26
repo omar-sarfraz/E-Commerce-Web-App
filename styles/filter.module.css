@@ -1,0 +1,75 @@
+.filterOuter {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid lightgray;
+  border-radius: 0.2rem;
+}
+
+.filterOuter h2 {
+  margin: 0;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.filterMain {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.range {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.range input {
+  border: 1px solid lightgray;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  margin: 0 0.4rem;
+  outline: none;
+}
+
+.range label {
+  font-size: 1.3rem;
+}
+
+.selection select {
+  border: 1px solid lightgray;
+  border-radius: 0.2rem;
+  font-size: 1.1rem;
+  padding: 0.4rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.button button {
+  background-color: #0093e9;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.4rem 1rem;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.button button:hover {
+  filter: brightness(120%);
+}
+
+.button_range {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .range input {
+    width: 40%;
+  }
+  .button_range {
+    margin-bottom: 1rem;
+  }
+}

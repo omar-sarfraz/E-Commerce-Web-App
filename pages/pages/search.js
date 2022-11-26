@@ -4,15 +4,18 @@ import styles from "../../styles/companyProducts.module.css";
 import Link from "next/link";
 
 import CompanyProduct from "../../components/CompanyProduct";
+import Filter from "../../components/Filter";
 import searchStyles from "../../styles/search.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setSearchData } from "../../redux/slices/searchDataSlice";
 
 export default function Search() {
-  const [products, setProducts] = useState("");
+  const filterData = useSelector((state) => state.filterData.value);
+  const searchData = useSelector((state) => state.searchData.value);
   const data = useSelector((state) => state.products.value);
-  const [searchText, setSearchText] = useState(
-    "Search for your favourite products"
-  );
+  const [searchText, setSearchText] = useState("No search result");
+
+  const dispatch = useDispatch();
 
   const [search, setSearch] = useState("");
 
@@ -26,15 +29,16 @@ export default function Search() {
       ) {
         return true;
       }
+      console.log(item.category);
     });
 
     if (!searchedArray.length) {
-      setProducts("");
+      dispatch(setSearchData(""));
       setSearchText("No product found");
       return;
     }
 
-    setProducts(searchedArray);
+    dispatch(setSearchData(searchedArray));
   };
 
   const keyPressed = (e) => {
@@ -65,14 +69,10 @@ export default function Search() {
             />
           </button>
         </div>
-        <div
-          className={[
-            styles.productsContainer,
-            searchStyles.productsContainer,
-          ].join(" ")}
-        >
-          {products ? (
-            products.map((item, index) => (
+        <Filter data={searchData} />
+        <div className={styles.productsContainer}>
+          {filterData.length ? (
+            filterData.map((item, index) => (
               <CompanyProduct product={item} key={index} />
             ))
           ) : (

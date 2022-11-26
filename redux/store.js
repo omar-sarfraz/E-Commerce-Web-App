@@ -10,6 +10,8 @@ import earphoneReducer from "./slices/earphonesSlice";
 import cartOpen from "./slices/cartOpen";
 import userReducer from "./slices/userSlice";
 import productsReducer from "./slices/productsSlice";
+import filteredDataReducer from "./slices/filterDataSlice";
+import searchDataReducer from "./slices/searchDataSlice";
 
 export const store = configureStore({
   reducer: {
@@ -24,5 +26,7 @@ export const store = configureStore({
     cartOpen: cartOpen,
     user: userReducer,
     products: productsReducer,
+    searchData: searchDataReducer,
+    filterData: filteredDataReducer,
   },
 });
